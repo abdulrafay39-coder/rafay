@@ -1,0 +1,44 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <script src="https://unpkg.com/@panzoom/panzoom@4.6.0/dist/panzoom.min.js"></script>
+<!--panzoom cdn-->
+<style>
+    .viewer{
+        width: 600px;
+        height: 400px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .img{
+        max-width: 100%;
+        display: block;
+        user-select: none;
+    }
+</style>
+</head>
+<body>
+    <div class="viewer" id="viewer">
+        <img id="image" src="https://i.pcmag.com/imagery/articles/02CSJuMlLJdYWDbPW5gpfCR-6.fit_lim.v1742831214.jpg">
+    </div>
+
+    <button id="zoomIn">zoom In</button>
+    <button id="zoomout">zoom out</button>
+      <button id="reset">reset</button>
+    
+    <script>
+        const elem = document.getElementById("image")
+        
+        const panzoom = Panzoom(elem)
+
+        
+        document.getElementById("zoomIn").onclick = ()=>panzoom.zoomIn()
+        document.getElementById("zoomout").onclick = ()=>panzoom.zoomOut()
+        document.getElementById("reset").onclick =()=>panzoom.reset()
+    </script>
+</body>
+</html>
